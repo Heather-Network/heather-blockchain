@@ -105,12 +105,14 @@ class CoinStore:
             )
             await self._add_coin_record(reward_coin_r, False)
 
-        total_amount_spent: int = 0
+        #        total_amount_spent: int = 0
         for coin_name in tx_removals:
-            total_amount_spent += await self._set_spent(coin_name, height)
+            #            total_amount_spent += await self._set_spent(coin_name, block.height)
+            await self._set_spent(coin_name, height)
 
         # Sanity check, already checked in block_body_validation
-        assert sum([a.amount for a in tx_additions]) <= total_amount_spent
+
+        #        assert sum([a.amount for a in tx_additions]) <= total_amount_spent
         end = time()
         if end - start > 10:
             log.warning(
