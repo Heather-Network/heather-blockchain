@@ -196,8 +196,7 @@ class TestCoinStoreWithBlocks:
                     coins = block.get_included_reward_coins()
                     records = [await coin_store.get_coin_record(coin.name()) for coin in coins]
 
-                    for record in records:
-                        await coin_store._set_spent(record.coin.name(), block.height)
+                    await coin_store._set_spent([r.name for r in records], block.height)
 
                     records = [await coin_store.get_coin_record(coin.name()) for coin in coins]
                     for record in records:
@@ -232,9 +231,7 @@ class TestCoinStoreWithBlocks:
                     coins = block.get_included_reward_coins()
                     records = [await coin_store.get_coin_record(coin.name()) for coin in coins]
 
-                    for record in records:
-                        assert record is not None
-                        await coin_store._set_spent(record.coin.name(), block.height)
+                    await coin_store._set_spent([r.name for r in records], block.height)
 
                     records = [await coin_store.get_coin_record(coin.name()) for coin in coins]
                     for record in records:

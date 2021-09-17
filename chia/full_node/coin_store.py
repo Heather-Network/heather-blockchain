@@ -78,6 +78,8 @@ class CoinStore:
 
         start = time()
 
+        additions = []
+
         for coin in tx_additions:
             record: CoinRecord = CoinRecord(
                 coin,
@@ -87,7 +89,7 @@ class CoinStore:
                 False,
                 timestamp,
             )
-            await self._add_coin_record(record)
+            additions.append(record)
 
         if height == 0:
             assert len(included_reward_coins) == 0
@@ -103,10 +105,10 @@ class CoinStore:
                 True,
                 timestamp,
             )
-            await self._add_coin_record(reward_coin_r)
+            additions.append(reward_coin_r)
 
-        for coin_name in tx_removals:
-            await self._set_spent(coin_name, height)
+        await self._add_coin_records(additions)
+        await self._set_spent(tx_removals, height)
 
         end = time()
         if end - start > 10:
@@ -296,36 +298,44 @@ class CoinStore:
         await c2.close()
 
     # Store CoinRecord in DB and ram cache
-    async def _add_coin_record(self, record: CoinRecord) -> None:
-        if self.coin_record_cache.get(record.coin.name()) is not None:
-            self.coin_record_cache.remove(record.coin.name())
+    async def _add_coin_records(self, records: List[CoinRecord]) -> None:
 
-        cursor = await self.coin_record_db.execute(
+        values = []
+        for record in records:
+            self.coin_record_cache.put(record.coin.name(), record)
+            values.append(
+                (
+                    record.coin.name().hex(),
+                    record.confirmed_block_index,
+                    record.spent_block_index,
+                    int(record.spent),
+                    int(record.coinbase),
+                    str(record.coin.puzzle_hash.hex()),
+                    str(record.coin.parent_coin_info.hex()),
+                    bytes(record.coin.amount),
+                    record.timestamp,
+                )
+            )
+
+        cursor = await self.coin_record_db.executemany(
             "INSERT INTO coin_record VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (
-                record.coin.name().hex(),
-                record.confirmed_block_index,
-                record.spent_block_index,
-                int(record.spent),
-                int(record.coinbase),
-                str(record.coin.puzzle_hash.hex()),
-                str(record.coin.parent_coin_info.hex()),
-                bytes(record.coin.amount),
-                record.timestamp,
-            ),
+            values,
         )
         await cursor.close()
 
     # Update coin_record to be spent in DB
-    async def _set_spent(self, coin_name: bytes32, index: uint32):
+    async def _set_spent(self, coin_names: List[bytes32], index: uint32):
 
         # if this coin is in the cache, mark it as spent in there
-        r = self.coin_record_cache.get(coin_name)
-        if r is not None:
-            self.coin_record_cache.put(
-                r.name, CoinRecord(r.coin, r.confirmed_block_index, index, True, r.coinbase, r.timestamp)
-            )
+        updates = []
+        for coin_name in coin_names:
+            r = self.coin_record_cache.get(coin_name)
+            if r is not None:
+                self.coin_record_cache.put(
+                    r.name, CoinRecord(r.coin, r.confirmed_block_index, index, True, r.coinbase, r.timestamp)
+                )
+            updates.append((index, coin_name.hex()))
 
-        await self.coin_record_db.execute(
-            "UPDATE OR FAIL coin_record SET spent=1,spent_index=? WHERE coin_name=?", (index, coin_name.hex())
+        await self.coin_record_db.executemany(
+            "UPDATE OR FAIL coin_record SET spent=1,spent_index=? WHERE coin_name=?", updates
         )
