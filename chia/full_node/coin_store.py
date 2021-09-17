@@ -105,14 +105,9 @@ class CoinStore:
             )
             await self._add_coin_record(reward_coin_r, False)
 
-        #        total_amount_spent: int = 0
         for coin_name in tx_removals:
-            #            total_amount_spent += await self._set_spent(coin_name, block.height)
             await self._set_spent(coin_name, height)
 
-        # Sanity check, already checked in block_body_validation
-
-        #        assert sum([a.amount for a in tx_additions]) <= total_amount_spent
         end = time()
         if end - start > 10:
             log.warning(
@@ -322,19 +317,15 @@ class CoinStore:
         await cursor.close()
 
     # Update coin_record to be spent in DB
-    async def _set_spent(self, coin_name: bytes32, index: uint32) -> uint64:
-        current: Optional[CoinRecord] = await self.get_coin_record(coin_name)
-        if current is None:
-            raise ValueError(f"Cannot spend a coin that does not exist in db: {coin_name}")
+    async def _set_spent(self, coin_name: bytes32, index: uint32):
 
-        assert not current.spent  # Redundant sanity check, already checked in block_body_validation
-        spent: CoinRecord = CoinRecord(
-            current.coin,
-            current.confirmed_block_index,
-            index,
-            True,
-            current.coinbase,
-            current.timestamp,
-        )  # type: ignore # noqa
-        await self._add_coin_record(spent, True)
-        return current.coin.amount
+        # if this coin is in the cache, mark it as spent in there
+        r = self.coin_record_cache.get(coin_name)
+        if r is not None:
+            self.coin_record_cache.put(
+                r.name, CoinRecord(r.coin, r.confirmed_block_index, index, True, r.coinbase, r.timestamp)
+            )
+
+        await self.coin_record_db.execute(
+            f"UPDATE OR FAIL coin_record SET spent=1,spent_index=? WHERE coin_name=?", (index, coin_name.hex())
+        )
