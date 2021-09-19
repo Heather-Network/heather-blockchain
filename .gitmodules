@@ -6,3 +6,6 @@
 	path = mozilla-ca
 	url = https://github.com/Chia-Network/mozilla-ca.git
         branch = main
+[submodule "heather-blockchain-gui"]
+	path = heather-blockchain-gui
+	url = https://github.com/Heather-Network/heather-blockchain-gui/
