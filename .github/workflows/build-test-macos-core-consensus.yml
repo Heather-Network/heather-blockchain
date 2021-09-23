@@ -1,5 +1,5 @@
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/chia-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/heather-blockchain/tree/main/tests#readme
 #
 name: MacOS core-consensus Tests
 
@@ -102,5 +102,5 @@ jobs:
         . ./activate
         ./venv/bin/py.test tests/core/consensus/test_pot_iterations.py -s -v --durations 0
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/chia-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/heather-blockchain/tree/main/tests#readme
 #

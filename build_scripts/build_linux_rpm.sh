@@ -6,10 +6,10 @@ if [ ! "$1" ]; then
 elif [ "$1" = "amd64" ]; then
 	#PLATFORM="$1"
 	REDHAT_PLATFORM="x86_64"
-	DIR_NAME="chia-blockchain-linux-x64"
+	DIR_NAME="heather-blockchain-linux-x64"
 else
 	#PLATFORM="$1"
-	DIR_NAME="chia-blockchain-linux-arm64"
+	DIR_NAME="heather-blockchain-linux-arm64"
 fi
 
 pip install setuptools_scm
@@ -56,7 +56,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-# sets the version for chia-blockchain in package.json
+# sets the version for heather-blockchain in package.json
 cp package.json package.json.orig
 jq --arg VER "$CHIA_INSTALLER_VERSION" '.version=$VER' package.json > temp.json && mv temp.json package.json
 
@@ -77,12 +77,12 @@ mv $DIR_NAME ../build_scripts/dist/
 cd ../build_scripts || exit
 
 if [ "$REDHAT_PLATFORM" = "x86_64" ]; then
-	echo "Create chia-blockchain-$CHIA_INSTALLER_VERSION.rpm"
+	echo "Create heather-blockchain-$CHIA_INSTALLER_VERSION.rpm"
 
 	# shellcheck disable=SC2046
 	NODE_ROOT="$(dirname $(dirname $(which node)))"
 
-	# Disables build links from the generated rpm so that we dont conflict with other packages. See https://github.com/Chia-Network/chia-blockchain/issues/3846
+	# Disables build links from the generated rpm so that we dont conflict with other packages. See https://github.com/Chia-Network/heather-blockchain/issues/3846
 	# shellcheck disable=SC2086
 	sed -i '1s/^/%define _build_id_links none\n%global _enable_debug_package 0\n%global debug_package %{nil}\n%global __os_install_post \/usr\/lib\/rpm\/brp-compress %{nil}\n/' "$NODE_ROOT/lib/node_modules/electron-installer-redhat/resources/spec.ejs"
 

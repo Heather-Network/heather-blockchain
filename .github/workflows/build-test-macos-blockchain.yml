@@ -1,5 +1,5 @@
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Heather-Network/chia-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Heather-Network/heather-blockchain/tree/main/tests#readme
 #
 name: MacOS blockchain Tests
 
@@ -102,5 +102,5 @@ jobs:
         . ./activate
         ./venv/bin/py.test tests/blockchain/test_blockchain.py tests/blockchain/test_blockchain_transactions.py -s -v --durations 0
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/chia-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/heather-blockchain/tree/main/tests#readme
 #

@@ -43,7 +43,7 @@ Today we’re releasing version 1.2.6 to address a resource bug with nodes, and 
 - Improvements to sync full nodes faster by improving the concurrency for downloading and validating blocks.
 - Added new call for logging peer_host: get_peer_logging that will use the peer_host value, typically an IP address, when the peername cannot be retrieved.
 - Added documentation for treehash params.
-- Added a py.typed file that allows other projects that pip install chia-blockchain to type check using our functions with mypy.
+- Added a py.typed file that allows other projects that pip install heather-blockchain to type check using our functions with mypy.
 - Added an RPC for coin records by multiple coin names.
 - Enabled querying AAAA records for DNS Introducer.
 - We now set the version for the GUI when doing a manual install using the install-gui.sh script. Uses a python helper to get the version of the chia install and then converts it into proper npm format and puts that into package.json.
@@ -129,7 +129,7 @@ submissions. Thanks to @RuiZhe for Chinese, Traditional; @HansCZ for Czech;
 ### Fixed
 
 - Converted test_rom.py to use pytest and fixed test_singleton.
-- Thanks to @yshklarov for help fixing [#7273](https://github.com/Chia-Network/chia-blockchain/issues/7273), which bundled CA store to support pools for some farming systems, including M1 Apple computers. This enables those machines to properly connect to pools, and fixes the issue.
+- Thanks to @yshklarov for help fixing [#7273](https://github.com/Chia-Network/heather-blockchain/issues/7273), which bundled CA store to support pools for some farming systems, including M1 Apple computers. This enables those machines to properly connect to pools, and fixes the issue.
 
 ## 1.2.1 Chia blockchain 2021-07-12
 
@@ -149,7 +149,7 @@ submissions. Thanks to @RuiZhe for Chinese, Traditional; @HansCZ for Czech;
 ### Added
 
 - Portable pooled plots are now available using our new plot NFT. These allow you to plot new plots to an NFT that can either self farm or join and leave pools. During development there were changes to the plot NFT so portable pool plots (those made with `-c` option to `chia plots create`) using code from before June 25th are invalid on mainnet.
-OG plots made before this release can continue to be farmed side by side with the new portable pool plots but can not join pools using the official pooling protocol. You can learn more as a farmer by checking out the [pool user guide](https://github.com/Chia-Network/chia-blockchain/wiki/Pooling-User-Guide). Pool operators and those wanting to understand how the official pooling protocol operates should check out our [pooling implementation reference repository](https://github.com/Chia-Network/pool-reference). If you plan to use plot NFT, all your farmers and harvesters must be on 1.2.0 to function properly for portable pool plots.
+OG plots made before this release can continue to be farmed side by side with the new portable pool plots but can not join pools using the official pooling protocol. You can learn more as a farmer by checking out the [pool user guide](https://github.com/Chia-Network/heather-blockchain/wiki/Pooling-User-Guide). Pool operators and those wanting to understand how the official pooling protocol operates should check out our [pooling implementation reference repository](https://github.com/Chia-Network/pool-reference). If you plan to use plot NFT, all your farmers and harvesters must be on 1.2.0 to function properly for portable pool plots.
 - The exact commit after which Plot NFTs should be valid is the 89f7a4b3d6329493cd2b4bc5f346a819c99d3e7b commit (in which `pools.testnet9` branch was merged to main) or 5d62b3d1481c1e225d8354a012727ab263342c0a within the `pools.testnet9` branch.
 - `chia farm summary` and the GUI now use a new RPC endpoint to properly show plots for local and remote harvesters. This should address issues #6563, #5881, #3875, #1461.
 - `chia configure` now supports command line updates to peer count and target peer count.
@@ -408,7 +408,7 @@ Batch process weight proof epochs in groups of 900 to fit below May 2020 sqlite 
 ### Changed
 
 - The plotter in bitfield mode is much improved in plotting speed (~15% faster than in 1.0.3), now requires 28% less temporary space (238.3 GiB/256 GB), and now uses its maximum memory in phase 1 and only needs 3389MiB for optimal sorting of a k32. Total writes should also be down by about 20%. On almost all machines we expect bitfield to be as fast or faster. For CPUs that predate the [Nehalem architecture](https://en.wikipedia.org/wiki/Nehalem_(microarchitecture)), bitfield plotting will not work and you will need to use no bitfield. Those CPUs were generally designed before 2010.
-- The `src` directory in chia-blockchain has been changed to `chia` to avoid namespace collisions.
+- The `src` directory in heather-blockchain has been changed to `chia` to avoid namespace collisions.
 - GUI install builds have been simplified to rely on one `.spec` file in `chia/`
 - The weight proof timeout can now be configured in config.yaml.
 - Peer discovery is now retried more often after you receive initial peers.
@@ -427,7 +427,7 @@ Batch process weight proof epochs in groups of 900 to fit below May 2020 sqlite 
 ### Added
 
 - This is a minor bug fix release for version 1.0.2
-- You should review the [release notes for v1.0.2](https://github.com/Chia-Network/chia-blockchain/releases/tag/1.0.2) but we especially want to point out that wallet sync is much faster than in 1.0.1 and earlier versions.
+- You should review the [release notes for v1.0.2](https://github.com/Chia-Network/heather-blockchain/releases/tag/1.0.2) but we especially want to point out that wallet sync is much faster than in 1.0.1 and earlier versions.
 
 ### Fixed
 
@@ -441,7 +441,7 @@ Batch process weight proof epochs in groups of 900 to fit below May 2020 sqlite 
 - We have released version 1.0.0 of [chiapos](https://github.com/Chia-Network/chiapos). This includes a 20% speed increase for bitfield plotting compared to the previous version on the same machine. In many cases this will mean that bitfield plotting is as fast or faster than non bitfield plotting.
 - @xorinox improved our support for RedHat related distributions in `install.sh`.
 - @ayaseen improved our support for RedHat related distributions in `install-timelord.sh`.
-- We have added Dutch and Polish to supported translations. Thanks @psydafke, @WesleyVH, @pieterhauwaerts, @bartlomiej.tokarzewski, @abstruso, @feel.the.code, and @Axadiw for contributions to [translations on Crowdin](https://crowdin.com/project/chia-blockchain).
+- We have added Dutch and Polish to supported translations. Thanks @psydafke, @WesleyVH, @pieterhauwaerts, @bartlomiej.tokarzewski, @abstruso, @feel.the.code, and @Axadiw for contributions to [translations on Crowdin](https://crowdin.com/project/heather-blockchain).
 - The GUI now supports "Exclude final directory" when plotting. This is found in the Advanced Options for step 2 on the plot creation page.
 
 ### Changed
@@ -472,7 +472,7 @@ Batch process weight proof epochs in groups of 900 to fit below May 2020 sqlite 
 - There is now a simple progress bar on the GUI Plot page and when you view the log from the three dots on the right.
 - Users must now explicitly set the `--show-mnemonic-seed` flag to see their private keys when running `chia keys show`.
 - We are now building Linux GUI installers. These should be considered beta quality for now.
-- Translations now available for German, Traditional Chinese, and Danish. Thanks to @Dravenex, @MaestroOnICe, @loudsyncro, @loppefaaret, @thirteenthd, @wong8888, @N418, and @swjz for all the translation help. You to can translate at our [Crowdin project](https://crowdin.com/project/chia-blockchain/).
+- Translations now available for German, Traditional Chinese, and Danish. Thanks to @Dravenex, @MaestroOnICe, @loudsyncro, @loppefaaret, @thirteenthd, @wong8888, @N418, and @swjz for all the translation help. You to can translate at our [Crowdin project](https://crowdin.com/project/heather-blockchain/).
 
 ### Changed
 
@@ -483,7 +483,7 @@ Batch process weight proof epochs in groups of 900 to fit below May 2020 sqlite 
 ### Fixed
 
 - Weight proofs, especially wallet weight proofs were failing when some Blueboxed proofs of time were encountered.
-- Users can now pip install e.g. chia-blockchain==1.0.1 on most platforms.
+- Users can now pip install e.g. heather-blockchain==1.0.1 on most platforms.
 - Sometimes the GUI had an error regarding MainWindow.
 
 ## 1.0.0 First Release of Chia Blockchain 2021-03-17

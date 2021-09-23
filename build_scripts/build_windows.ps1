@@ -46,12 +46,12 @@ Write-Output "Chia Version is: $env:CHIA_INSTALLER_VERSION"
 Write-Output "   ---"
 
 Write-Output "   ---"
-Write-Output "Build chia-blockchain wheels"
+Write-Output "Build heather-blockchain wheels"
 Write-Output "   ---"
 pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
 
 Write-Output "   ---"
-Write-Output "Install chia-blockchain wheels into venv with pip"
+Write-Output "Install heather-blockchain wheels into venv with pip"
 Write-Output "   ---"
 
 Write-Output "pip install miniupnpc"
@@ -60,8 +60,8 @@ pip install --no-index --find-links=.\win_build\ miniupnpc
 # Write-Output "pip install setproctitle"
 # pip install setproctitle==1.2.2
 
-Write-Output "pip install chia-blockchain"
-pip install --no-index --find-links=.\win_build\ chia-blockchain
+Write-Output "pip install heather-blockchain"
+pip install --no-index --find-links=.\win_build\ heather-blockchain
 
 Write-Output "   ---"
 Write-Output "Use pyinstaller to create chia .exe's"
