@@ -10,11 +10,11 @@ if [ -z "$VIRTUAL_ENV" ]; then
 fi
 
 if [ "$(id -u)" = 0 ]; then
-  echo "The Chia Blockchain GUI can not be installed or run by the root user."
+  echo "The Heather Blockchain GUI can not be installed or run by the root user."
 	exit 1
 fi
 
-# Allows overriding the branch or commit to build in chia-blockchain-gui
+# Allows overriding the branch or commit to build in heather-blockchain-gui
 SUBMODULE_BRANCH=$1
 
 UBUNTU=false
@@ -80,7 +80,7 @@ if [ ! "$CI" ]; then
 	echo "Running git submodule update."
 	echo ""
 	git submodule update
-	cd chia-blockchain-gui
+	cd heather-blockchain-gui
 
 	if [ "$SUBMODULE_BRANCH" ];
 	then
@@ -101,6 +101,6 @@ else
 fi
 
 echo ""
-echo "Chia blockchain install-gui.sh completed."
+echo "Heather blockchain install-gui.sh completed."
 echo ""
-echo "Type 'cd chia-blockchain-gui' and then 'npm run electron &' to start the GUI."
+echo "Type 'cd heather-blockchain-gui' and then 'npm run electron &' to start the GUI."

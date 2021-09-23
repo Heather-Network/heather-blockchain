@@ -18,8 +18,8 @@ from chia.util.keychain import Keychain
 from chia.util.path import mkdir
 from chia.wallet.derive_keys import master_sk_to_farmer_sk, master_sk_to_local_sk, master_sk_to_pool_sk
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.plotting.create_plots")
 
 class PlotKeys:
     def __init__(
@@ -114,7 +114,7 @@ class PlotKeysResolver:
         sk: Optional[PrivateKey] = await self.get_sk(keychain_proxy)
         if sk is None:
             raise RuntimeError(
-                "No keys, please run 'chia keys add', 'chia keys generate' or provide a public key with -f"
+                "No keys, please run 'heather keys add', 'heather keys generate' or provide a public key with -f"
             )
         return master_sk_to_farmer_sk(sk).get_g1()
 
@@ -122,7 +122,7 @@ class PlotKeysResolver:
         sk: Optional[PrivateKey] = await self.get_sk(keychain_proxy)
         if sk is None:
             raise RuntimeError(
-                "No keys, please run 'chia keys add', 'chia keys generate' or provide a public key with -p"
+                "No keys, please run 'heather keys add', 'heather keys generate' or provide a public key with -p"
             )
         return master_sk_to_pool_sk(sk).get_g1()
 

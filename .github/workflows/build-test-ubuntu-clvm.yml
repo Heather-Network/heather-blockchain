@@ -68,9 +68,9 @@ jobs:
     - name: Link home directory
       run: |
         cd $HOME
-        ln -s $GITHUB_WORKSPACE/.chia
-        echo "$HOME/.chia"
-        ls -al $HOME/.chia
+        ln -s $GITHUB_WORKSPACE/.heather
+        echo "$HOME/.heather"
+        ls -al $HOME/.heather
 
     - name: Install ubuntu dependencies
       run: |

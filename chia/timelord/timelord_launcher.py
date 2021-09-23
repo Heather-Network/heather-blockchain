@@ -17,8 +17,8 @@ active_processes: List = []
 stopped = False
 lock = asyncio.Lock()
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.timelord.timelord_launcher")
 
 async def kill_processes():
     global stopped
@@ -88,7 +88,7 @@ async def spawn_all_processes(config: Dict, net_config: Dict):
 
 def main():
     root_path = DEFAULT_ROOT_PATH
-    setproctitle("chia_timelord_launcher")
+    setproctitle("heather_timelord_launcher")
     net_config = load_config(root_path, "config.yaml")
     config = net_config["timelord_launcher"]
     initialize_logging("TLauncher", config["logging"], root_path)

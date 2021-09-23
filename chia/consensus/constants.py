@@ -5,8 +5,8 @@ from chia.util.byte_types import hexstr_to_bytes
 from chia.util.ints import uint8, uint32, uint64, uint128
 import logging
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.constants")
 
 @dataclasses.dataclass(frozen=True)
 class ConsensusConstants:

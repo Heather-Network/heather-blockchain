@@ -14,8 +14,8 @@ from tests.util.keyring import TempKeyring, using_temp_file_keyring
 from time import sleep
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.util.test_file_keyring_synchronization")
 
 DUMMY_SLEEP_VALUE = 2
 

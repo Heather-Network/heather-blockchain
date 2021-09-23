@@ -60,7 +60,7 @@ steps:
       . ./activate
       clang --version
       pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ --wheel-dir=wheels .
-      pip install --no-index --find-links=./wheels/ chia-blockchain
+      pip install --no-index --find-links=./wheels/ heather-blockchain
     displayName: "Build and install wheels"
 
   - task: NodeTool@0

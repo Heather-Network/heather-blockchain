@@ -15,8 +15,8 @@ from chia.util.ints import uint16
 from chia.util.json_util import dict_to_json_str, obj_to_response
 from chia.util.ws_message import create_payload, create_payload_dict, format_response, pong
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.rpc.rpc_server")
 
 class RpcServer:
     """

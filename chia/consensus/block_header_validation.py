@@ -31,8 +31,8 @@ from chia.util.errors import Err, ValidationError
 from chia.util.hash import std_hash
 from chia.util.ints import uint8, uint32, uint64, uint128
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.block_header_validation")
 
 # noinspection PyCallByClass
 def validate_unfinished_header_block(

@@ -73,7 +73,8 @@ class CCWallet:
         self.base_puzzle_program = None
         self.base_inner_puzzle_hash = None
         self.standard_wallet = wallet
-        self.log = logging.getLogger(__name__)
+        #self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.wallet.cc_wallet.cc_wallet")
         std_wallet_id = self.standard_wallet.wallet_id
         bal = await wallet_state_manager.get_confirmed_balance_for_wallet(std_wallet_id, None)
         if amount > bal:
@@ -164,7 +165,8 @@ class CCWallet:
         self.base_puzzle_program = None
         self.base_inner_puzzle_hash = None
         self.standard_wallet = wallet
-        self.log = logging.getLogger(__name__)
+        #self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.wallet.cc_wallet.cc_wallet")
 
         self.wallet_state_manager = wallet_state_manager
 
@@ -187,7 +189,8 @@ class CCWallet:
     ) -> CCWallet:
         self = CCWallet()
 
-        self.log = logging.getLogger(__name__)
+        #self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.wallet.cc_wallet.cc_wallet")
 
         self.cost_of_single_tx = None
         self.wallet_state_manager = wallet_state_manager

@@ -93,7 +93,7 @@ class WalletNode:
         config: Dict,
         root_path: Path,
         consensus_constants: ConsensusConstants,
-        name: str = None,
+        name: str = "heather.wallet.wallet_node",
         local_keychain: Optional[Keychain] = None,
     ):
         self.config = config
@@ -142,7 +142,7 @@ class WalletNode:
             keychain_proxy = await self.ensure_keychain_proxy()
             key = await keychain_proxy.get_key_for_fingerprint(fingerprint)
         except KeyringIsEmpty:
-            self.log.warning("No keys present. Create keys with the UI, or with the 'chia keys' program.")
+            self.log.warning("No keys present. Create keys with the UI, or with the 'heather keys' program.")
             return None
         except KeyringIsLocked:
             self.log.warning("Keyring is locked")

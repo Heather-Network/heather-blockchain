@@ -39,8 +39,8 @@ from chia.util.hash import std_hash
 from chia.util.ints import uint8, uint32, uint64, uint128
 from chia.util.streamable import dataclass_from_dict, recurse_jsonify
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.")
 
 class WeightProofHandler:
 

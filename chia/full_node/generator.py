@@ -15,8 +15,8 @@ DECOMPRESS_PUZZLE = load_clvm("decompress_puzzle.clvm", package_or_requirement="
 DECOMPRESS_CSE_WITH_PREFIX = load_clvm(
     "decompress_coin_spend_entry_with_prefix.clvm", package_or_requirement="chia.wallet.puzzles"
 )
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.full_node.generator")
 
 def create_block_generator(
     generator: SerializedProgram, block_heights_list: List[uint32], generator_block_cache: GeneratorBlockCacheInterface

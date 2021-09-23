@@ -32,8 +32,8 @@ from chia.util.merkle_set import MerkleSet
 from chia.util.prev_transaction_block import get_prev_transaction_block
 from chia.util.recursive_replace import recursive_replace
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.block_creation")
 
 def create_foliage(
     constants: ConsensusConstants,

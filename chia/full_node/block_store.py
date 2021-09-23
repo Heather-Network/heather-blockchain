@@ -12,8 +12,8 @@ from chia.util.db_wrapper import DBWrapper
 from chia.util.ints import uint32
 from chia.util.lru_cache import LRUCache
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.fullnode.blockstore")
 
 class BlockStore:
     db: aiosqlite.Connection

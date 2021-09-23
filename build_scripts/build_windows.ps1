@@ -70,10 +70,10 @@ $SPEC_FILE = (python -c 'import chia; print(chia.PYINSTALLER_SPEC_PATH)') -join 
 pyinstaller --log-level INFO $SPEC_FILE
 
 Write-Output "   ---"
-Write-Output "Copy chia executables to chia-blockchain-gui\"
+Write-Output "Copy chia executables to heather-blockchain-gui\"
 Write-Output "   ---"
-Copy-Item "dist\daemon" -Destination "..\chia-blockchain-gui\" -Recurse
-Set-Location -Path "..\chia-blockchain-gui" -PassThru
+Copy-Item "dist\daemon" -Destination "..\heather-blockchain-gui\" -Recurse
+Set-Location -Path "..\heather-blockchain-gui" -PassThru
 
 git status
 

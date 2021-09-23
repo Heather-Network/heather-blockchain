@@ -64,7 +64,7 @@ class Service:
         self._rpc_close_task: Optional[asyncio.Task] = None
         self._network_id: str = network_id
 
-        proctitle_name = f"chia_{service_name}"
+        proctitle_name = f"heather_{service_name}"
         setproctitle(proctitle_name)
         self._log = logging.getLogger(service_name)
 
@@ -226,7 +226,7 @@ class Service:
 
         self._log.info("Waiting for socket to be closed (if opened)")
 
-        self._log.info("Waiting for ChiaServer to be closed")
+        self._log.info("Waiting for HeatherServer to be closed")
         await self._server.await_closed()
 
         if self._rpc_close_task:

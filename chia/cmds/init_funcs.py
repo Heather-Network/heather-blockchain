@@ -65,7 +65,7 @@ def check_keys(new_root: Path, keychain: Optional[Keychain] = None) -> None:
         keychain = Keychain()
     all_sks = keychain.get_all_private_keys()
     if len(all_sks) == 0:
-        print("No keys are present in the keychain. Generate them with 'chia keys generate'")
+        print("No keys are present in the keychain. Generate them with 'heather keys generate'")
         return None
 
     config: Dict = load_config(new_root, "config.yaml")
@@ -90,7 +90,7 @@ def check_keys(new_root: Path, keychain: Optional[Keychain] = None) -> None:
 
     # Set the destinations
     if "xch_target_address" not in config["farmer"]:
-        print(f"Setting the xch destination address for coinbase fees reward to {all_targets[0]}")
+        print(f"setting the xheath destination address for coinbase fees reward to {all_targets[0]}")
         config["farmer"]["xch_target_address"] = all_targets[0]
     elif config["farmer"]["xch_target_address"] not in all_targets:
         print(
@@ -102,7 +102,7 @@ def check_keys(new_root: Path, keychain: Optional[Keychain] = None) -> None:
     if "pool" not in config:
         config["pool"] = {}
     if "xch_target_address" not in config["pool"]:
-        print(f"Setting the xch destination address for coinbase reward to {all_targets[0]}")
+        print(f"setting the xheath destination address for coinbase reward to {all_targets[0]}")
         config["pool"]["xch_target_address"] = all_targets[0]
     elif config["pool"]["xch_target_address"] not in all_targets:
         print(
@@ -344,7 +344,7 @@ def chia_init(root_path: Path, *, should_check_keys: bool = True, fix_ssl_permis
             f"or manually migrate config.yaml"
         )
 
-    print(f"Chia directory {root_path}")
+    print(f"Heather directory {root_path}")
     if root_path.is_dir() and Path(root_path / "config" / "config.yaml").exists():
         # This is reached if CHIA_ROOT is set, or if user has run chia init twice
         # before a new update.
@@ -362,6 +362,6 @@ def chia_init(root_path: Path, *, should_check_keys: bool = True, fix_ssl_permis
     if should_check_keys:
         check_keys(root_path)
     print("")
-    print("To see your keys, run 'chia keys show --show-mnemonic-seed'")
+    print("To see your keys, run 'heather keys show --show-mnemonic-seed'")
 
     return 0

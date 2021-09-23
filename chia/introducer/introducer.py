@@ -14,7 +14,8 @@ class Introducer:
         self.recent_peer_threshold = recent_peer_threshold
         self._shut_down = False
         self.server: Optional[ChiaServer] = None
-        self.log = logging.getLogger(__name__)
+        #self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.introducer.introducer")
 
     async def _start(self):
         self._vetting_task = asyncio.create_task(self._vetting_loop())

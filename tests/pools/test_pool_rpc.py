@@ -34,8 +34,8 @@ from tests.setup_nodes import self_hostname, setup_simulators_and_wallets, bt
 from tests.time_out_assert import time_out_assert
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.pools.test_pool_rpc")
 
 @pytest.fixture(scope="module")
 def event_loop():

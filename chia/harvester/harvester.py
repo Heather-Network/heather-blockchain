@@ -18,7 +18,8 @@ from chia.plotting.util import (
 )
 from chia.util.streamable import dataclass_from_dict
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.harvester.harvester")
 
 
 class Harvester:

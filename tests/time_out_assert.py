@@ -5,8 +5,8 @@ from typing import Callable
 
 from chia.protocols.protocol_message_types import ProtocolMessageTypes
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.time_out_assert")
 
 async def time_out_assert_custom_interval(timeout: int, interval, function, value=True, *args, **kwargs):
     start = time.time()

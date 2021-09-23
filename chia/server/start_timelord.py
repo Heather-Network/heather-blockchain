@@ -18,8 +18,8 @@ from chia.util.default_root import DEFAULT_ROOT_PATH
 SERVICE_NAME = "timelord"
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.server.start_timelord")
 
 def service_kwargs_for_timelord(
     root_path: pathlib.Path,

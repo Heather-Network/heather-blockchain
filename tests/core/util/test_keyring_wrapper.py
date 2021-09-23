@@ -5,8 +5,8 @@ from chia.util.keyring_wrapper import KeyringWrapper, DEFAULT_PASSPHRASE_IF_NO_M
 from pathlib import Path
 from tests.util.keyring import using_temp_file_keyring, using_temp_file_keyring_and_cryptfilekeyring
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.util.test_keyring_wrapper")
 
 class TestKeyringWrapper(unittest.TestCase):
     def setUp(self) -> None:

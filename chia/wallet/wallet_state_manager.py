@@ -125,7 +125,7 @@ class WalletStateManager:
         constants: ConsensusConstants,
         server: ChiaServer,
         root_path: Path,
-        name: str = None,
+        name: str = "heather.wallet.wallet_state_manager",
     ):
         self = WalletStateManager()
         self.new_wallet = False

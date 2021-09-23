@@ -25,8 +25,8 @@ def event_loop():
     yield loop
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.full_sync.test_full_sync")
 
 class TestFullSync:
     @pytest.fixture(scope="function")

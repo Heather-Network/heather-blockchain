@@ -23,8 +23,8 @@ pool_list:
     target_puzzle_hash: 344587cf06a39db471d2cc027504e8688a0a67cce961253500c956c73603fd58
 """  # noqa
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.pools.cool_config")
 
 @dataclass(frozen=True)
 @streamable

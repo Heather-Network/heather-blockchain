@@ -19,8 +19,8 @@ from chia.util.errors import Err
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.server.test_dos")
 
 async def get_block_path(full_node: FullNodeAPI):
     blocks_list = [await full_node.full_node.blockchain.get_full_peak()]

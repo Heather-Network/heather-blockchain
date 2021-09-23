@@ -47,7 +47,7 @@ class DIDWallet:
         amount: uint64,
         backups_ids: List = [],
         num_of_backup_ids_needed: uint64 = None,
-        name: str = None,
+        name: str = "heather",
     ):
         """
         This must be called under the wallet state manager lock

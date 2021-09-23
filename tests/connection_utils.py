@@ -18,8 +18,8 @@ from chia.util.ints import uint16
 from tests.setup_nodes import self_hostname
 from tests.time_out_assert import time_out_assert
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.connection_utils")
 
 async def disconnect_all_and_reconnect(server: ChiaServer, reconnect_to: ChiaServer) -> bool:
     cons = list(server.all_connections.values())[:]

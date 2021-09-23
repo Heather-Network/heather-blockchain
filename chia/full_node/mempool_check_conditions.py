@@ -20,8 +20,8 @@ from chia.wallet.puzzles.rom_bootstrap_generator import get_generator
 GENERATOR_MOD = get_generator()
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.full_node.mempoool_check_conditions")
 
 def mempool_assert_absolute_block_height_exceeds(
     condition: ConditionWithArgs, prev_transaction_block_height: uint32

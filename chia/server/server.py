@@ -92,7 +92,7 @@ class ChiaServer:
         config: Dict,
         private_ca_crt_key: Tuple[Path, Path],
         chia_ca_crt_key: Tuple[Path, Path],
-        name: str = None,
+        name: str = "heather",
         introducer_peers: Optional[IntroducerPeers] = None,
     ):
         # Keeps track of all connections to and from this node.
@@ -696,7 +696,7 @@ class ChiaServer:
         try:
             timeout = ClientTimeout(total=15)
             async with ClientSession(timeout=timeout) as session:
-                async with session.get("https://ip.chia.net/") as resp:
+                async with session.get("https://ip.heatherblockchain.io/") as resp:
                     if resp.status == 200:
                         ip = str(await resp.text())
                         ip = ip.rstrip()

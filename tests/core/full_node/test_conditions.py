@@ -42,8 +42,8 @@ atexit.register(cleanup_keyring, temp_keyring)  # Attempt to cleanup the temp ke
 bt = create_block_tools(constants=test_constants, keychain=keychain)
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_conditions")
 
 # This puzzle simply returns the solution as conditions.
 # We call it the `EASY_PUZZLE` because it's pretty easy to solve.

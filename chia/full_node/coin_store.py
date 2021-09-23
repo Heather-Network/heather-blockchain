@@ -10,8 +10,8 @@ from chia.util.lru_cache import LRUCache
 from time import time
 import logging
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.full_node.coin_store")
 
 class CoinStore:
     """

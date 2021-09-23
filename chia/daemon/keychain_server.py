@@ -17,7 +17,8 @@ keychain_commands = [
     "get_key_for_fingerprint",
 ]
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.daemon.keychain.server")
 
 KEYCHAIN_ERR_KEYERROR = "key error"
 KEYCHAIN_ERR_LOCKED = "keyring is locked"

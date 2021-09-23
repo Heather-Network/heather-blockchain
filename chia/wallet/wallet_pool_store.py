@@ -7,8 +7,8 @@ from chia.types.coin_spend import CoinSpend
 from chia.util.db_wrapper import DBWrapper
 from chia.util.ints import uint32
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.wallet.wallet_pool_store")
 
 class WalletPoolStore:
     db_connection: aiosqlite.Connection

@@ -92,9 +92,9 @@ def configure(
     if testnet is not None:
         if testnet == "true" or testnet == "t":
             print("Setting Testnet")
-            testnet_port = "58444"
-            testnet_introducer = "beta1_introducer.chia.net"
-            testnet_dns_introducer = "dns-introducer-testnet7.chia.net"
+            testnet_port = "58008"
+            testnet_introducer = "testnet-introducer.heatherblockchain.io"
+            testnet_dns_introducer = "testnet-introducer.heatherblockchain.io"
             testnet = "testnet7"
             config["full_node"]["port"] = int(testnet_port)
             config["full_node"]["introducer_peer"]["port"] = int(testnet_port)
@@ -119,9 +119,9 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
-            mainnet_port = "8444"
-            mainnet_introducer = "introducer.chia.net"
-            mainnet_dns_introducer = "dns-introducer.chia.net"
+            mainnet_port = "8008"
+            mainnet_introducer = "introducer.heatherblockchain.io"
+            mainnet_dns_introducer = "dns-introducer.heatherblockchain.io"
             net = "mainnet"
             config["full_node"]["port"] = int(mainnet_port)
             config["full_node"]["introducer_peer"]["port"] = int(mainnet_port)
@@ -151,7 +151,7 @@ def configure(
         change_made = True
 
     if change_made:
-        print("Restart any running chia services for changes to take effect")
+        print("Restart any running heather services for changes to take effect")
         save_config(root_path, "config.yaml", config)
     return 0
 

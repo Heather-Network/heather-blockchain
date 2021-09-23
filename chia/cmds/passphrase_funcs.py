@@ -76,7 +76,7 @@ def read_passphrase_from_file(passphrase_file: TextIOWrapper) -> str:
 def initialize_passphrase() -> None:
     if Keychain.has_master_passphrase():
         print("Keyring is already protected by a passphrase")
-        print("\nUse 'chia passphrase set' or 'chia passphrase remove' to update or remove your passphrase")
+        print("\nUse 'heather passphrase set' or 'heather passphrase remove' to update or remove your passphrase")
         sys.exit(1)
 
     # We'll rely on Keyring initialization to leverage the cached passphrase for

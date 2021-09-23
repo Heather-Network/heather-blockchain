@@ -1,19 +1,19 @@
 from typing import KeysView, Generator
 
 SERVICES_FOR_GROUP = {
-    "all": "chia_harvester chia_timelord_launcher chia_timelord chia_farmer chia_full_node chia_wallet".split(),
-    "node": "chia_full_node".split(),
-    "harvester": "chia_harvester".split(),
-    "farmer": "chia_harvester chia_farmer chia_full_node chia_wallet".split(),
-    "farmer-no-wallet": "chia_harvester chia_farmer chia_full_node".split(),
-    "farmer-only": "chia_farmer".split(),
-    "timelord": "chia_timelord_launcher chia_timelord chia_full_node".split(),
-    "timelord-only": "chia_timelord".split(),
-    "timelord-launcher-only": "chia_timelord_launcher".split(),
-    "wallet": "chia_wallet chia_full_node".split(),
-    "wallet-only": "chia_wallet".split(),
-    "introducer": "chia_introducer".split(),
-    "simulator": "chia_full_node_simulator".split(),
+    "all": "heather_harvester heather_timelord_launcher heather_timelord heather_farmer heather_full_node heather_wallet".split(),
+    "node": "heather_full_node".split(),
+    "harvester": "heather_harvester".split(),
+    "farmer": "heather_harvester heather_farmer heather_full_node heather_wallet".split(),
+    "farmer-no-wallet": "heather_harvester heather_farmer heather_full_node".split(),
+    "farmer-only": "heather_farmer".split(),
+    "timelord": "heather_timelord_launcher heather_timelord heather_full_node".split(),
+    "timelord-only": "heather_timelord".split(),
+    "timelord-launcher-only": "heather_timelord_launcher".split(),
+    "wallet": "heather_wallet heather_full_node".split(),
+    "wallet-only": "heather_wallet".split(),
+    "introducer": "heather_introducer".split(),
+    "simulator": "heather_full_node_simulator".split(),
 }
 
 

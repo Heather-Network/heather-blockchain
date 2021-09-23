@@ -29,7 +29,7 @@ class BlockCache(BlockchainInterface):
         self._height_to_hash = height_to_hash
         self._sub_epoch_summaries = sub_epoch_summaries
         self._sub_epoch_segments: Dict[uint32, SubEpochSegments] = {}
-        self.log = logging.getLogger(__name__)
+        self.log = logging.getLogger("__name__")
 
     def block_record(self, header_hash: bytes32) -> BlockRecord:
         return self._block_records[header_hash]

@@ -20,8 +20,8 @@ from .make_block_generator import make_block_generator
 BURN_PUZZLE_HASH = b"0" * 32
 SMALL_BLOCK_GENERATOR = make_block_generator(1)
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.test_core_calculation")
 
 @pytest.fixture(scope="module")
 def event_loop():
@@ -46,7 +46,7 @@ def large_block_generator(size):
     except FileNotFoundError:
         generator = make_block_generator(size)
         blob = bytes(generator.program)
-        #  TODO: Re-enable large-block*.hex but cache in ~/.chia/subdir
+        #  TODO: Re-enable large-block*.hex but cache in ~/.heather/subdir
         #  with open(hex_path, "w") as f:
         #      f.write(blob.hex())
         return blob

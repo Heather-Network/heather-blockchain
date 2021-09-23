@@ -13,8 +13,8 @@ from chia.types.blockchain_format.sized_bytes import bytes32, bytes100
 from chia.util.ints import uint8, uint64
 from chia.util.streamable import Streamable, streamable
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.types.blockchain_format.vdf")
 
 @lru_cache(maxsize=200)
 def get_discriminant(challenge, size_bites) -> int:

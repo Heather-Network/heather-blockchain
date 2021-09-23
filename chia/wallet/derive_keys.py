@@ -9,7 +9,8 @@ from chia.util.ints import uint32
 # 12381 = bls spec number
 # 8444 = Chia blockchain number and port number
 # 0, 1, 2, 3, 4, 5, 6 farmer, pool, wallet, local, backup key, singleton, pooling authentication key numbers
-
+# Heather Blockchain note: if the Blockchain number is changed, the plots are incompatible between Chia and Heather,
+# so here, like most forks, the blockchain number is retained as that of Chia
 
 def _derive_path(sk: PrivateKey, path: List[int]) -> PrivateKey:
     for index in path:

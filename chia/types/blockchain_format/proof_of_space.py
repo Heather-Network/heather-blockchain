@@ -12,8 +12,8 @@ from chia.util.hash import std_hash
 from chia.util.ints import uint8
 from chia.util.streamable import Streamable, streamable
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.types.blockchain_format.proof_of_space")
 
 @dataclass(frozen=True)
 @streamable

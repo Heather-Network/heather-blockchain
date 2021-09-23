@@ -12,8 +12,8 @@ from chia.types.blockchain_format.sub_epoch_summary import SubEpochSummary
 from chia.types.end_of_slot_bundle import EndOfSubSlotBundle
 from chia.util.ints import uint8, uint32, uint64, uint128
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.timelord.timelord_state")
 
 class LastState:
     """

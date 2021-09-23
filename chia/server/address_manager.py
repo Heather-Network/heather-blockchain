@@ -25,8 +25,8 @@ MAX_RETRIES = 3
 MIN_FAIL_DAYS = 7
 MAX_FAILURES = 10
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.server.address_manager")
 
 # This is a Python port from 'CAddrInfo' class from Bitcoin core code.
 class ExtendedPeerInfo:

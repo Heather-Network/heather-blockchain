@@ -53,7 +53,7 @@ class Wallet:
     async def create(
         wallet_state_manager: Any,
         info: WalletInfo,
-        name: str = None,
+        name: str = "heather.wallet.wallet",
     ):
         self = Wallet()
         self.log = logging.getLogger(name if name else __name__)

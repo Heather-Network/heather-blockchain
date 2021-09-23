@@ -117,8 +117,8 @@ test_constants = DEFAULT_CONSTANTS.replace(
 )
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.block_tools")
 
 class BlockTools:
     """

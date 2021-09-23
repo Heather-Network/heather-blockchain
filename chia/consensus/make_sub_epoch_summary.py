@@ -18,8 +18,8 @@ from chia.types.full_block import FullBlock
 from chia.types.unfinished_block import UnfinishedBlock
 from chia.util.ints import uint8, uint32, uint64, uint128
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.make_sub_epoch_summary")
 
 def make_sub_epoch_summary(
     constants: ConsensusConstants,

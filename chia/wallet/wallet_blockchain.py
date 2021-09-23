@@ -28,8 +28,8 @@ from chia.wallet.wallet_coin_store import WalletCoinStore
 from chia.wallet.wallet_pool_store import WalletPoolStore
 from chia.wallet.wallet_transaction_store import WalletTransactionStore
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.wallet.wallet_blockchain")
 
 class ReceiveBlockResult(Enum):
     """
@@ -111,7 +111,8 @@ class WalletBlockchain(BlockchainInterface):
         self._shut_down = False
         self.new_transaction_block_callback = new_transaction_block_callback
         self.reorg_rollback = reorg_rollback
-        self.log = logging.getLogger(__name__)
+#        self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.wallet.wallet_blockchain")
         self.wallet_state_manager_lock = lock
         await self._load_chain_from_store()
         return self

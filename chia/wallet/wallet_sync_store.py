@@ -6,7 +6,8 @@ from chia.types.blockchain_format.sized_bytes import bytes32
 from chia.types.header_block import HeaderBlock
 from chia.util.ints import uint32
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.wallet.wallet_sync_store")
 
 
 class WalletSyncStore:

@@ -7,8 +7,8 @@ from typing import Optional
 from chia.protocols.protocol_message_types import ProtocolMessageTypes
 from chia.server.outbound_message import Message
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.server.rate_limits")
 
 @dataclasses.dataclass(frozen=True)
 class RLSettings:

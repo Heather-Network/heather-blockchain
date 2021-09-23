@@ -29,8 +29,8 @@ from chia.wallet.derive_keys import master_sk_to_wallet_sk, master_sk_to_pooling
 from tests.setup_nodes import bt, self_hostname, setup_farmer_harvester, test_constants
 from tests.time_out_assert import time_out_assert
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.test_farmer_harvester")
 
 class TestRpc:
     @pytest.fixture(scope="function")

@@ -22,7 +22,7 @@ if [ ! "$CHIA_INSTALLER_VERSION" ]; then
 	echo "WARNING: No environment variable CHIA_INSTALLER_VERSION set. Using 0.0.0."
 	CHIA_INSTALLER_VERSION="0.0.0"
 fi
-echo "Chia Installer Version is: $CHIA_INSTALLER_VERSION"
+echo "Heather Installer Version is: $CHIA_INSTALLER_VERSION"
 
 echo "Installing npm and electron packagers"
 npm install electron-packager -g
@@ -42,9 +42,9 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-cp -r dist/daemon ../chia-blockchain-gui
+cp -r dist/daemon ../heather-blockchain-gui
 cd .. || exit
-cd chia-blockchain-gui || exit
+cd heather-blockchain-gui || exit
 
 echo "npm build"
 npm install
@@ -60,7 +60,7 @@ fi
 cp package.json package.json.orig
 jq --arg VER "$CHIA_INSTALLER_VERSION" '.version=$VER' package.json > temp.json && mv temp.json package.json
 
-electron-packager . chia-blockchain --asar.unpack="**/daemon/**" --platform=linux \
+electron-packager . heather-blockchain --asar.unpack="**/daemon/**" --platform=linux \
 --icon=src/assets/img/Chia.icns --overwrite --app-bundle-id=net.chia.blockchain \
 --appVersion=$CHIA_INSTALLER_VERSION
 LAST_EXIT_CODE=$?

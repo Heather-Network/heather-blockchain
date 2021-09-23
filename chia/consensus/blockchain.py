@@ -36,8 +36,8 @@ from chia.util.generator_tools import get_block_header, tx_removals_and_addition
 from chia.util.ints import uint16, uint32, uint64, uint128
 from chia.util.streamable import recurse_jsonify
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.blockchain")
 
 class ReceiveBlockResult(Enum):
     """

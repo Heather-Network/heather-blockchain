@@ -91,7 +91,7 @@ class FullNode:
         config: Dict,
         root_path: Path,
         consensus_constants: ConsensusConstants,
-        name: str = None,
+        name: str = "heather.full_node",
     ):
         self.initialized = False
         self.root_path = root_path
@@ -207,9 +207,9 @@ class FullNode:
             default_port = None
         if "dns_servers" in self.config:
             dns_servers = self.config["dns_servers"]
-        elif self.config["port"] == 8444:
+        elif self.config["port"] == 8008:
             # If `dns_servers` misses from the `config`, hardcode it if we're running mainnet.
-            dns_servers.append("dns-introducer.chia.net")
+            dns_servers.append("dns-introducerheatherblockchain.io")
         try:
             self.full_node_peers = FullNodePeers(
                 self.server,

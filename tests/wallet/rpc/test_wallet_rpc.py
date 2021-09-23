@@ -21,8 +21,8 @@ from chia.wallet.transaction_record import TransactionRecord
 from tests.setup_nodes import bt, setup_simulators_and_wallets, self_hostname
 from tests.time_out_assert import time_out_assert
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.wallet.rpc.test_wallet_rpc")
 
 class TestWalletRpc:
     @pytest.fixture(scope="function")

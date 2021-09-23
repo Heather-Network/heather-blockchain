@@ -42,8 +42,8 @@ def event_loop():
     yield loop
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_full_node_store")
 
 @pytest.fixture(scope="function")
 async def empty_blockchain():

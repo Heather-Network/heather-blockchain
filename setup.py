@@ -21,7 +21,7 @@ dependencies = [
     #  "keyrings.cryptfile==1.3.8",  # Secure storage for keys on Linux (Will be replaced)
     #  See https://github.com/frispete/keyrings.cryptfile/issues/15
     "PyYAML==5.4.1",  # Used for config file format
-    "setproctitle==1.2.2",  # Gives the chia processes readable names
+    "setproctitle==1.2.2",  # Gives the heather processes readable names
     "sortedcontainers==2.4.0",  # For maintaining sorted mempools
     "websockets==8.1.0",  # For use in wallet RPC and electron UI
     "click==7.1.2",  # For the CLI
@@ -44,14 +44,14 @@ dev_dependencies = [
 ]
 
 kwargs = dict(
-    name="chia-blockchain",
+    name="heather-blockchain",
     author="Mariano Sorgente",
     author_email="mariano@chia.net",
-    description="Chia blockchain full node, farmer, timelord, and wallet.",
-    url="https://chia.net/",
+    description="Heather blockchain full node, farmer, timelord, and wallet.",
+    url="https://heathernetwork.io/",
     license="Apache License",
     python_requires=">=3.7, <4",
-    keywords="chia blockchain node",
+    keywords="heather blockchain node",
     install_requires=dependencies,
     setup_requires=["setuptools_scm"],
     extras_require=dict(
@@ -93,15 +93,15 @@ kwargs = dict(
     ],
     entry_points={
         "console_scripts": [
-            "chia = chia.cmds.chia:main",
-            "chia_wallet = chia.server.start_wallet:main",
-            "chia_full_node = chia.server.start_full_node:main",
-            "chia_harvester = chia.server.start_harvester:main",
-            "chia_farmer = chia.server.start_farmer:main",
-            "chia_introducer = chia.server.start_introducer:main",
-            "chia_timelord = chia.server.start_timelord:main",
-            "chia_timelord_launcher = chia.timelord.timelord_launcher:main",
-            "chia_full_node_simulator = chia.simulator.start_simulator:main",
+            "heather = chia.cmds.chia:main",
+            "heather_wallet = chia.server.start_wallet:main",
+            "heather_full_node = chia.server.start_full_node:main",
+            "heather_harvester = chia.server.start_harvester:main",
+            "heather_farmer = chia.server.start_farmer:main",
+            "heather_introducer = chia.server.start_introducer:main",
+            "heather_timelord = chia.server.start_timelord:main",
+            "heather_timelord_launcher = chia.timelord.timelord_launcher:main",
+            "heather_full_node_simulator = chia.simulator.start_simulator:main",
         ]
     },
     package_data={
@@ -111,7 +111,9 @@ kwargs = dict(
         "chia.ssl": ["chia_ca.crt", "chia_ca.key", "dst_root_ca.pem"],
         "mozilla-ca": ["cacert.pem"],
     },
-    use_scm_version={"fallback_version": "unknown-no-.git-directory"},
+    #use_scm_version={"fallback_version": "unknown-no-.git-directory"},
+    use_scm_version={"fallback_version": "1.2.3dev1"},
+
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     zip_safe=False,

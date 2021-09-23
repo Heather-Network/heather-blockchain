@@ -106,7 +106,7 @@ jobs:
         APPLE_NOTARIZE_PASSWORD: "${{ secrets.APPLE_NOTARIZE_PASSWORD }}"
       run: |
         . ./activate
-        cd ./chia-blockchain-gui
+        cd ./heather-blockchain-gui
         git status
         cd ../build_scripts
         sh build_macos.sh

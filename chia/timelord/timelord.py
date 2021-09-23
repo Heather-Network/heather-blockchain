@@ -31,14 +31,22 @@ from chia.types.blockchain_format.sub_epoch_summary import SubEpochSummary
 from chia.types.blockchain_format.vdf import VDFInfo, VDFProof
 from chia.types.end_of_slot_bundle import EndOfSubSlotBundle
 from chia.util.ints import uint8, uint32, uint64, uint128
+from chia.util.setproctitle import setproctitle
 
-log = logging.getLogger(__name__)
-
+#self.log = logging.getLogger(name if name else _ _name__)
+log = logging.getLogger("heather.timelord.timelord")
 
 class Timelord:
-    def __init__(self, root_path, config: Dict, constants: ConsensusConstants):
+    def __init__(
+            self,
+            root_path,
+            config: Dict,
+            constants: ConsensusConstants,
+            name: str = "heather.timelord.timelord",
+    ):
         self.config = config
         self.root_path = root_path
+        setproctitle("heather_timelord")
         self.constants = constants
         self._shut_down = False
         self.free_clients: List[Tuple[str, asyncio.StreamReader, asyncio.StreamWriter]] = []

@@ -22,8 +22,8 @@ BURN_PUZZLE_HASH = b"0" * 32
 WALLET_A = WalletTool(test_constants)
 WALLET_A_PUZZLE_HASHES = [WALLET_A.get_new_puzzlehash() for _ in range(5)]
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.blockchain.test_blockchain_transactions")
 
 @pytest.fixture(scope="session")
 def event_loop():
@@ -979,9 +979,9 @@ class TestBlockchainTransactions:
             if coin.puzzle_hash == coinbase_puzzlehash:
                 spend_coin_block_1 = coin
 
-        # This condition requires fee to be 10 mojo
+        # This condition requires fee to be 10 ch
         cvp_fee = ConditionWithArgs(ConditionOpcode.RESERVE_FEE, [int_to_bytes(10)])
-        # This spend bundle has 9 mojo as fee
+        # This spend bundle has 9 ch as fee
         block1_dic_bad = {cvp_fee.opcode: [cvp_fee]}
         block1_dic_good = {cvp_fee.opcode: [cvp_fee]}
         block1_spend_bundle_bad = wallet_a.generate_signed_transaction(

@@ -20,8 +20,8 @@ from chia.util.hash import std_hash
 from chia.util.keychain import Keychain
 from chia.wallet.derive_keys import master_sk_to_farmer_sk, master_sk_to_local_sk
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.plotting.check_plots")
 
 def plot_refresh_callback(refresh_result: PlotRefreshResult):
     log.info(f"loaded {refresh_result.loaded_plots} plots, {refresh_result.remaining_files} remaining")
@@ -184,5 +184,5 @@ def check_plots(root_path, num, challenge_start, grep_string, list_duplicates, d
         log.warning(
             f"There are {len(plot_manager.no_key_filenames)} plots with a farmer or pool public key that "
             f"is not on this machine. The farmer private key must be in the keychain in order to "
-            f"farm them, use 'chia keys' to transfer keys. The pool public keys must be in the config.yaml"
+            f"farm them, use 'heather keys' to transfer keys. The pool public keys must be in the config.yaml"
         )

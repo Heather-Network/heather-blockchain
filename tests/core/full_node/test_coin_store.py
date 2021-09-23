@@ -35,8 +35,8 @@ constants = test_constants
 
 WALLET_A = WalletTool(constants)
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("tests.core.full_node.test_coin_store")
 
 def get_future_reward_coins(block: FullBlock) -> Tuple[Coin, Coin]:
     pool_amount = calculate_pool_reward(block.height)

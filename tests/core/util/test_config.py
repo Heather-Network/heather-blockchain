@@ -17,8 +17,8 @@ from typing import Dict
 # import os
 # import threading
 
-# log = logging.getLogger(__name__)
-
+# log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.util.test_config")
 
 def write_config(root_path: Path, config: Dict):
     """

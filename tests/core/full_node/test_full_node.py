@@ -51,8 +51,8 @@ from tests.core.fixtures import empty_blockchain  # noqa: F401
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets, test_constants
 from tests.time_out_assert import time_out_assert, time_out_assert_custom_interval, time_out_messages
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_full_node")
 
 async def new_transaction_not_requested(incoming, new_spend):
     await asyncio.sleep(3)

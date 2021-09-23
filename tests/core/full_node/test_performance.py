@@ -27,8 +27,8 @@ from tests.core.fixtures import empty_blockchain  # noqa: F401
 from tests.setup_nodes import bt, setup_simulators_and_wallets, test_constants
 from tests.time_out_assert import time_out_assert, time_out_assert_custom_interval, time_out_messages
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_performance")
 
 async def get_block_path(full_node: FullNodeAPI):
     blocks_list = [await full_node.full_node.blockchain.get_full_peak()]

@@ -49,7 +49,8 @@ from chia.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     calculate_synthetic_secret_key,
 )
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.blockchain.test_blockchain")
 bad_element = ClassgroupElement.from_bytes(b"\x00")
 
 
@@ -2480,7 +2481,7 @@ class TestBodyValidation:
 
         spend = list(blocks[-1].get_included_reward_coins())[0]
         print("spend=", spend)
-        # this create coin will spend all of the coin, so the 10 mojos below
+        # this create coin will spend all of the coin, so the 10 ch below
         # will be "minted".
         output = ConditionWithArgs(ConditionOpcode.CREATE_COIN, [bt.pool_ph, int_to_bytes(spend.amount)])
         condition_dict = {ConditionOpcode.CREATE_COIN: [output]}

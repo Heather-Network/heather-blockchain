@@ -10,8 +10,8 @@ from chiapos import DiskProver
 from chia.types.blockchain_format.sized_bytes import bytes32
 from chia.util.config import load_config, save_config
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.plotting.util")
 
 @dataclass
 class PlotsRefreshParameter:

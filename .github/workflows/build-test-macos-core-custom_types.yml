@@ -1,5 +1,5 @@
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/chia-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Heather-Network/heather-blockchain/tree/main/tests#readme
 #
 name: MacOS core-custom_types Tests
 
@@ -67,16 +67,16 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'Chia-Network/test-cache'
-        path: '.chia'
+        path: '.heather'
         ref: '0.27.0'
         fetch-depth: 1
 
     - name: Link home directory
       run: |
         cd $HOME
-        ln -s $GITHUB_WORKSPACE/.chia
-        echo "$HOME/.chia"
-        ls -al $HOME/.chia
+        ln -s $GITHUB_WORKSPACE/.heather
+        echo "$HOME/.heather"
+        ls -al $HOME/.heather
 
     - name: Run install script
       env:

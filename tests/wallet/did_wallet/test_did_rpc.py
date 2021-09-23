@@ -14,8 +14,8 @@ from tests.time_out_assert import time_out_assert
 from chia.wallet.did_wallet.did_wallet import DIDWallet
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.wallet.did_wallet.test_did_rpc")
 
 @pytest.fixture(scope="module")
 def event_loop():

@@ -12,35 +12,35 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: ccd5bb71183532bff220ba46c268991a3ff07eb358e8255a65c30a2dce0e5fbb
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
+      GENESIS_CHALLENGE: "0a23492c0923f75b5e3d24115ce391c633affa5f5e73085247a1848f9cc43d76"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "aaeb5c45cfcd547e0d39f93c036a0b51db0fc164c978e934077cbc8e5a7ff804"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "f8ea33e6815f1909c07d503242b99daa14bab3fb9a60f10bcce6ed22e20ed6ac"
     testnet0:
       MIN_PLOT_SIZE: 18
-      GENESIS_CHALLENGE: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      GENESIS_CHALLENGE: "ce96437875eabeccb35698bba2affec0e99da587f3ab481d017e9c39552b1f92"
       NETWORK_TYPE: 1
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "e9ce3d0c363602818bb6a80906f1b09d8563767da84b9e684f27f5071e1b00c3"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "4741f264666300bfc06c149afedd024f64aa98208656622ac56bf8bba239ea7b"
     testnet2:
       MIN_PLOT_SIZE: 18
-      GENESIS_CHALLENGE: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+      GENESIS_CHALLENGE: "078b056bec1c728d3d9f45a4d514d180a9d93f1e73a57d8f1700acf97e0a27f5"
       NETWORK_TYPE: 1
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "93c835dd3917b7dfd5e54a43a3c64ad30304b8a1e656ba7113d3c3ed6ef845bc"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "27410e854c336dad6a77375801bc50a7668de013a236c8bee8635876849caba2"
     testnet3:
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: ca7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+      GENESIS_CHALLENGE: "7a19df165b10d9a1a2ec7010d9be78c3a90e919c07fc95f843ad3cbb3b89baa6"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "2c3729232e9b54b37659a833da97a0e601f1903e7c7d8b9fc770943843281050"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "8bf40fa73f932c52492ab2a716616f1d9ca718c195f5f60acfc38837bc500986"
       MIN_PLOT_SIZE: 18
       NETWORK_TYPE: 1
       MEMPOOL_BLOCK_BUFFER: 10
     testnet4:
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: dd7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+      GENESIS_CHALLENGE: "812b4b018b53166296a7a76c6009f3cbe2861b18b3fe271ea2589abd595135a5"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3ba13e9ff6dd6fd16cc7ff816a0e472902c01af1ef146429fc86bf0a078eec53"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "92c85b9695fdb4bb231add7cb45441a5c4f95c429c12a748c726cd2e3fca319c"
       MIN_PLOT_SIZE: 18
       NETWORK_TYPE: 1
       MEMPOOL_BLOCK_BUFFER: 10
@@ -48,9 +48,9 @@ network_overrides: &network_overrides
       DIFFICULTY_STARTING: 30
     testnet5:
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: ee7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+      GENESIS_CHALLENGE: "68a8e03280ef6c94239508bfefae4c1a73abe83c6249125b961dfba3858a7c41"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "e9e1d4ed605ac9c2424e7ed3b71a490efef597e7305e76a83abbdfd569712e97"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "ce03ce2a47a89f6e6da99326c83e2e45a0945677403ed31ee7a9bd727a54f11c"
       MIN_PLOT_SIZE: 18
       NETWORK_TYPE: 1
       MEMPOOL_BLOCK_BUFFER: 10
@@ -58,34 +58,34 @@ network_overrides: &network_overrides
       DIFFICULTY_STARTING: 30
     testnet7:
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: 117816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+      GENESIS_CHALLENGE: "706bcb05d4107d10314a10d9845618fa335604db7f9e363676fd4279a5c97d80"
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "04126995a7a8f8aa7a016e0a5930b5f2ca850087bfb8364232bc168fee2305c7"
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "10f2e85a9ff46a1f30fdf0f5392eee6153afcb927c088ac28c50e8d48a44629d"
       MIN_PLOT_SIZE: 18
-      NETWORK_TYPE: 1
+      NETWORK_TYPE:
       MEMPOOL_BLOCK_BUFFER: 10
       EPOCH_BLOCKS: 768
       DIFFICULTY_STARTING: 30
   config:
     mainnet:
-      address_prefix: "xch"
-      default_full_node_port: 8444
+      address_prefix: "xheath"
+      default_full_node_port: 8008
     testnet0:
-      address_prefix: "txch"
+      address_prefix: "txheath"
     testnet1:
-      address_prefix: "txch"
+      address_prefix: "txheath"
     testnet2:
-      address_prefix: "txch"
+      address_prefix: "txheath"
     testnet3:
-      address_prefix: "txch"
+      address_prefix: "txheath"
     testnet4:
-      address_prefix: "txch"
+      address_prefix: "txheath"
     testnet7:
-      address_prefix: "txch"
-      default_full_node_port: 58444
+      address_prefix: "txheath"
+      default_full_node_port: 58008
 
 selected_network: &selected_network "mainnet"
-ALERTS_URL: https://download.chia.net/notify/mainnet_alert.txt
+ALERTS_URL: https://download.heatherblockchain.io/notify/mainnet_alert.txt
 CHIA_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
 
 # public ssl ca is included in source code
@@ -116,10 +116,10 @@ logging: &logging
 
 harvester:
   # The harvester server (if run) will run on this port
-  port: 8448
+  port: 8012
   farmer_peer:
     host: *self_hostname
-    port: 8447
+    port: 8011
 
   # If True, starts an RPC server at the following port
   start_rpc_server: True
@@ -156,7 +156,7 @@ harvester:
 
 pool:
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # xch_target_address: txheath102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -164,19 +164,19 @@ pool:
 
 farmer:
   # The farmer server (if run) will run on this port
-  port: 8447
+  port: 8011
   # The farmer will attempt to connect to this full node and harvester
   full_node_peer:
     host: *self_hostname
-    port: 8444
+    port: 8008
   harvester_peer:
     host: *self_hostname
-    port: 8448
+    port: 8012
 
   pool_public_keys: []
 
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # xch_target_address: txheath102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
 
   # If True, starts an RPC server at the following port
   start_rpc_server: True
@@ -206,7 +206,7 @@ timelord_launcher:
 
 timelord:
   # The timelord server (if run) will run on this port
-  port: 8446
+  port: 8010
   # Provides a list of VDF clients expected to connect to this timelord.
   # For each client, an IP is provided, together with the estimated iterations per second.
   vdf_clients:
@@ -218,7 +218,7 @@ timelord:
       - 150000
   full_node_peer:
       host: *self_hostname
-      port: 8444
+      port: 8008
   # Maximum number of seconds allowed for a client to reconnect to the server.
   max_connection_time: 60
   # The ip and port where the TCP clients will connect.
@@ -253,7 +253,7 @@ timelord:
 
 full_node:
   # The full node server (if run) will run on this port
-  port: 8444
+  port: 8008
 
   # Run multiple nodes with different databases by changing the database_path
   database_path: db/blockchain_v1_CHALLENGE.sqlite
@@ -314,19 +314,19 @@ full_node:
   # List of trusted DNS seeders to bootstrap from.
   # If you modify this, please change the hardcode as well from FullNode.set_server()
   dns_servers:
-    - "dns-introducer.chia.net"
+    - "dns-introducer.heatherblockchain.io"
   farmer_peer:
       host: *self_hostname
-      port: 8447
+      port: 8011
   timelord_peer:
       host: *self_hostname
-      port: 8446
+      port: 8010
   introducer_peer:
-      host: introducer.chia.net  # Chia AWS introducer IPv4/IPv6
-      port: 8444
+      host: introducer.heatherblockchain.io  # Chia AWS introducer IPv4/IPv6
+      port: 8008
   wallet_peer:
     host: *self_hostname
-    port: 8449
+    port: 8013
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -360,7 +360,7 @@ ui:
 
 introducer:
   host: *self_hostname
-  port: 8445
+  port: 8009
   max_peers_to_send: 20
   # The introducer will only return peers who it has seen in the last
   # recent_peer_threshold seconds
@@ -374,7 +374,7 @@ introducer:
     public_key:  "config/ssl/full_node/public_full_node.key"
 
 wallet:
-  port: 8449
+  port: 8013
   rpc_port: 9256
 
   enable_profiler: False
@@ -389,7 +389,7 @@ wallet:
 
   full_node_peer:
     host: *self_hostname
-    port: 8444
+    port: 8008
 
   testing: False
   database_path: wallet/db/blockchain_wallet_v1_CHALLENGE_KEY.sqlite
@@ -406,8 +406,8 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: introducer.chia.net # Chia AWS introducer IPv4/IPv6
-    port: 8444
+    host: introducer.heatherblockchain.io # Chia AWS introducer IPv4/IPv6
+    port: 8008
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"

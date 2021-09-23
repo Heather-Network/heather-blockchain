@@ -45,8 +45,8 @@ BURN_PUZZLE_HASH_2 = b"1" * 32
 
 WALLET_A = bt.get_pool_wallet_tool()
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_mempool")
 
 def generate_test_spend_bundle(
     coin: Coin,

@@ -35,8 +35,8 @@ from chia.util.generator_tools import additions_for_npc
 from chia.util.ints import uint32, uint64
 from chia.util.streamable import recurse_jsonify
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.full_node.mempool_manager")
 
 def get_npc_multiprocess(spend_bundle_bytes: bytes, max_cost: int, cost_per_byte: int) -> bytes:
     program = simple_solution_generator(SpendBundle.from_bytes(spend_bundle_bytes))

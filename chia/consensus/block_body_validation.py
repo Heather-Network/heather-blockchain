@@ -39,8 +39,8 @@ from chia.util.generator_tools import (
 from chia.util.hash import std_hash
 from chia.util.ints import uint32, uint64, uint128
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.consensus.block_body_validation")
 
 async def validate_block_body(
     constants: ConsensusConstants,

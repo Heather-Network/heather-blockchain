@@ -44,6 +44,7 @@ from chia.util.config import load_config, save_config, config_path_for_filename
 from chia.util.hash import std_hash
 from chia.util.ints import uint8, uint16, uint32, uint64
 from chia.util.keychain import Keychain
+from chia.util.setproctitle import setproctitle
 from chia.wallet.derive_keys import (
     master_sk_to_farmer_sk,
     master_sk_to_pool_sk,
@@ -55,7 +56,8 @@ from chia.wallet.puzzles.singleton_top_layer import SINGLETON_MOD
 
 singleton_mod_hash = SINGLETON_MOD.get_tree_hash()
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.farmer.farmer")
 
 UPDATE_POOL_INFO_INTERVAL: int = 3600
 UPDATE_POOL_FARMER_INFO_INTERVAL: int = 300
@@ -98,6 +100,7 @@ class Farmer:
         self.local_keychain = local_keychain
         self._root_path = root_path
         self.config = farmer_config
+        setproctitle("heather_farmer")
         self.pool_config = pool_config
         # Keep track of all sps, keyed on challenge chain signage point hash
         self.sps: Dict[bytes32, List[farmer_protocol.NewSignagePoint]] = {}
@@ -144,7 +147,7 @@ class Farmer:
         ]
 
         if len(self.get_public_keys()) == 0:
-            error_str = "No keys exist. Please run 'chia keys generate' or open the UI."
+            error_str = "No keys exist. Please run 'heather keys generate' or open the UI."
             raise RuntimeError(error_str)
 
         # This is the farmer configuration
@@ -163,7 +166,7 @@ class Farmer:
         assert len(self.farmer_target) == 32
         assert len(self.pool_target) == 32
         if len(self.pool_sks_map) == 0:
-            error_str = "No keys exist. Please run 'chia keys generate' or open the UI."
+            error_str = "No keys exist. Please run 'heather keys generate' or open the UI."
             raise RuntimeError(error_str)
 
         # The variables below are for use with an actual pool

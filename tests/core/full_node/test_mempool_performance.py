@@ -25,8 +25,8 @@ def wallet_height_at_least(wallet_node, h):
     return False
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_mempool_performance")
 
 @pytest.fixture(scope="session")
 def event_loop():

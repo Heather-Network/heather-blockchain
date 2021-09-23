@@ -18,7 +18,8 @@ from chia.wallet.puzzles.singleton_top_layer import puzzle_for_singleton
 
 from chia.util.ints import uint32, uint64
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.pools.pool_puzzles")
 # "Full" is the outer singleton, with the inner puzzle filled in
 SINGLETON_MOD = load_clvm("singleton_top_layer.clvm")
 POOL_WAITING_ROOM_MOD = load_clvm("pool_waitingroom_innerpuz.clvm")

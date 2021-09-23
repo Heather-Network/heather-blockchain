@@ -333,7 +333,7 @@ class PoolWallet:
         block_spends: List[CoinSpend],
         block_height: uint32,
         in_transaction: bool,
-        name: str = None,
+        name: str = "heather.pools.pool_wallet",
     ):
         """
         This creates a new PoolWallet with only one spend: the launcher spend. The DB MUST be committed after calling
@@ -372,7 +372,7 @@ class PoolWallet:
         wallet_state_manager: Any,
         wallet: Wallet,
         wallet_info: WalletInfo,
-        name: str = None,
+        name: str = "heather.pools.pool_wallet",
     ):
         """
         This creates a PoolWallet from DB. However, all data is already handled by WalletPoolStore, so we don't need

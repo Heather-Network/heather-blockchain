@@ -12,7 +12,7 @@ class UserSettings:
     @staticmethod
     async def create(
         store: KeyValStore,
-        name: str = None,
+        name: str = "heather",
     ):
         self = UserSettings()
         self.basic_store = store

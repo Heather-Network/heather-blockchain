@@ -23,7 +23,7 @@ def print_transaction(tx: TransactionRecord, verbose: bool, name) -> None:
     if verbose:
         print(tx)
     else:
-        chia_amount = Decimal(int(tx.amount)) / units["chia"]
+        chia_amount = Decimal(int(tx.amount)) / units["heather"]
         to_address = encode_puzzle_hash(tx.to_puzzle_hash, name)
         print(f"Transaction {tx.name}")
         print(f"Status: {'Confirmed' if tx.confirmed else ('In mempool' if tx.is_in_mempool() else 'Pending')}")
@@ -89,8 +89,8 @@ async def send(args: dict, wallet_client: WalletRpcClient, fingerprint: int) -> 
         )
         return
     print("Submitting transaction...")
-    final_amount = uint64(int(amount * units["chia"]))
-    final_fee = uint64(int(fee * units["chia"]))
+    final_amount = uint64(int(amount * units["heather"]))
+    final_fee = uint64(int(fee * units["heather"]))
     res = await wallet_client.send_transaction(wallet_id, final_amount, address, final_fee)
     tx_id = res.name
     start = time.time()
@@ -99,11 +99,11 @@ async def send(args: dict, wallet_client: WalletRpcClient, fingerprint: int) -> 
         tx = await wallet_client.get_transaction(wallet_id, tx_id)
         if len(tx.sent_to) > 0:
             print(f"Transaction submitted to nodes: {tx.sent_to}")
-            print(f"Do chia wallet get_transaction -f {fingerprint} -tx 0x{tx_id} to get status")
+            print(f"Do heather wallet get_transaction -f {fingerprint} -tx 0x{tx_id} to get status")
             return None
 
     print("Transaction not yet submitted to nodes")
-    print(f"Do 'chia wallet get_transaction -f {fingerprint} -tx 0x{tx_id}' to get status")
+    print(f"Do 'heather wallet get_transaction -f {fingerprint} -tx 0x{tx_id}' to get status")
 
 
 async def get_address(args: dict, wallet_client: WalletRpcClient, fingerprint: int) -> None:
@@ -122,14 +122,14 @@ def wallet_coin_unit(typ: WalletType, address_prefix: str) -> Tuple[str, int]:
     if typ == WalletType.COLOURED_COIN:
         return "", units["colouredcoin"]
     if typ in [WalletType.STANDARD_WALLET, WalletType.POOLING_WALLET, WalletType.MULTI_SIG, WalletType.RATE_LIMITED]:
-        return address_prefix, units["chia"]
-    return "", units["mojo"]
+        return address_prefix, units["heather"]
+    return "", units["ling"]
 
 
 def print_balance(amount: int, scale: int, address_prefix: str) -> str:
     ret = f"{amount/scale} {address_prefix} "
     if scale > 1:
-        ret += f"({amount} mojo)"
+        ret += f"({amount} ling)"
     return ret
 
 
@@ -160,7 +160,7 @@ async def get_wallet(wallet_client: WalletRpcClient, fingerprint: int = None) ->
     else:
         fingerprints = await wallet_client.get_public_keys()
     if len(fingerprints) == 0:
-        print("No keys loaded. Run 'chia keys generate' or import a key")
+        print("No keys loaded. Run 'heather keys generate' or import a key")
         return None
     if len(fingerprints) == 1:
         fingerprint = fingerprints[0]
@@ -193,7 +193,7 @@ async def get_wallet(wallet_client: WalletRpcClient, fingerprint: int = None) ->
             use_cloud = True
             if "backup_path" in log_in_response:
                 path = log_in_response["backup_path"]
-                print(f"Backup file from backup.chia.net downloaded and written to: {path}")
+                print(f"Backup file from backup.heatherblockchain.io downloaded and written to: {path}")
                 val = input("Do you want to use this file to restore from backup? (Y/N) ")
                 if val.lower() == "y":
                     log_in_response = await wallet_client.log_in_and_restore(fingerprint, path)
@@ -248,7 +248,7 @@ async def execute_with_wallet(
         if isinstance(e, aiohttp.ClientConnectorError):
             print(
                 f"Connection error. Check if the wallet is running at {wallet_rpc_port}. "
-                "You can run the wallet via:\n\tchia start wallet"
+                "You can run the wallet via:\n\theather start wallet"
             )
         else:
             print(f"Exception from 'wallet' {e}")

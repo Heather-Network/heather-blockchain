@@ -39,14 +39,14 @@ from chia.consensus.coinbase import create_puzzlehash_for_pk
 # Timeout for response from wallet/full node for sending a transaction
 TIMEOUT = 30
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.rpc.rpc_api")
 
 class WalletRpcApi:
     def __init__(self, wallet_node: WalletNode):
         assert wallet_node is not None
         self.service = wallet_node
-        self.service_name = "chia_wallet"
+        self.service_name = "heather_wallet"
 
     def get_routes(self) -> Dict[str, Callable]:
         return {
@@ -128,7 +128,7 @@ class WalletRpcApi:
             data["wallet_id"] = args[1]
         if args[2] is not None:
             data["additional_data"] = args[2]
-        return [create_payload_dict("state_changed", data, "chia_wallet", "wallet_ui")]
+        return [create_payload_dict("state_changed", data, "heather_wallet", "wallet_ui")]
 
     async def _stop_wallet(self):
         """

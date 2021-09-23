@@ -11,8 +11,8 @@ from chia.server.address_manager import (
     ExtendedPeerInfo,
 )
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.server.address_manager_store")
 
 class AddressManagerStore:
     """

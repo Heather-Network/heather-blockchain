@@ -44,13 +44,14 @@ class TradeManager:
     async def create(
         wallet_state_manager: Any,
         db_wrapper: DBWrapper,
-        name: str = None,
+        name: str = "heather.wallet.trade_manager",
     ):
         self = TradeManager()
         if name:
             self.log = logging.getLogger(name)
         else:
-            self.log = logging.getLogger(__name__)
+            #self.log = logging.getLogger(_ _name__)
+            self.log = logging.getLogger("heather.wallet.trade_manager")
 
         self.wallet_state_manager = wallet_state_manager
         self.trade_store = await TradeStore.create(db_wrapper)

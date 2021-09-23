@@ -25,8 +25,8 @@ from chia.types.unfinished_block import UnfinishedBlock
 from chia.util.ints import uint8, uint32, uint64, uint128
 from chia.util.lru_cache import LRUCache
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.full_node.full_node_store")
 
 class FullNodeStore:
     constants: ConsensusConstants

@@ -27,8 +27,8 @@ from chia.types.blockchain_format.proof_of_space import ProofOfSpace
 from chia.types.blockchain_format.sized_bytes import bytes32
 from chia.wallet.derive_keys import master_sk_to_local_sk
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.plotting.manager")
 CURRENT_VERSION: uint16 = uint16(0)
 
 
@@ -156,7 +156,8 @@ class PlotManager:
         self.open_no_key_filenames = open_no_key_filenames
         self.last_refresh_time = 0
         self.refresh_parameter = refresh_parameter
-        self.log = logging.getLogger(__name__)
+        #self.log = logging.getLogger(_ _name__)
+        self.log = logging.getLogger("heather.plotting.manager")
         self._lock = threading.Lock()
         self._refresh_thread = None
         self._refreshing_enabled = False

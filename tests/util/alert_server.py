@@ -6,8 +6,8 @@ from typing import Any
 
 from aiohttp import web
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.util.alert_server")
 
 class AlertServer:
     shut_down: bool

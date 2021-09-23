@@ -13,8 +13,8 @@ from chia.full_node.coin_store import CoinStore
 from chia.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.core.full_node.test_block_store")
 
 @pytest.fixture(scope="module")
 def event_loop():

@@ -17,8 +17,8 @@ from chia.wallet.wallet_state_manager import WalletStateManager
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.tests.pools.test_pool_wallet")
 
 @pytest.fixture(scope="module")
 def event_loop():

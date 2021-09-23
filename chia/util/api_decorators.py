@@ -4,8 +4,8 @@ from inspect import signature
 
 from chia.util.streamable import Streamable
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.util.api_decorators")
 
 def api_request(f):
     @functools.wraps(f)

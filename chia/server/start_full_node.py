@@ -17,8 +17,8 @@ from chia.util.default_root import DEFAULT_ROOT_PATH
 "".encode("idna")
 
 SERVICE_NAME = "full_node"
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.server.start_full_node")
 
 def service_kwargs_for_full_node(
     root_path: pathlib.Path, config: Dict, consensus_constants: ConsensusConstants

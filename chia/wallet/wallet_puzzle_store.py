@@ -11,8 +11,8 @@ from chia.util.ints import uint32
 from chia.wallet.derivation_record import DerivationRecord
 from chia.wallet.util.wallet_types import WalletType
 
-log = logging.getLogger(__name__)
-
+#log = logging.getLogger(_ _name__)
+log = logging.getLogger("heather.wallet.wallet_puzzle_store")
 
 class WalletPuzzleStore:
     """
