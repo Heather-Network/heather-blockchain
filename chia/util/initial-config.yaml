@@ -360,7 +360,7 @@ ui:
 
 introducer:
   host: *self_hostname
-  port: 8009
+  port: 8008
   max_peers_to_send: 20
   # The introducer will only return peers who it has seen in the last
   # recent_peer_threshold seconds
