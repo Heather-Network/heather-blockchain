@@ -1,5 +1,5 @@
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/heather-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Heather-Network/heather-blockchain/tree/main/tests#readme
 #
 name: Ubuntu core-full_node Test
 
@@ -114,5 +114,5 @@ jobs:
         ./tests/check_pytest_monitor_output.py <metrics.out
 
 #
-# THIS FILE IS GENERATED. SEE https://github.com/Chia-Network/heather-blockchain/tree/main/tests#readme
+# THIS FILE IS GENERATED. SEE https://github.com/Heather-Network/heather-blockchain/tree/main/tests#readme
 #

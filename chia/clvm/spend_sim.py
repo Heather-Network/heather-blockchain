@@ -25,7 +25,7 @@ from chia.consensus.block_rewards import calculate_pool_reward, calculate_base_f
 from chia.consensus.cost_calculator import NPCResult
 
 """
-The purpose of this file is to provide a lightweight simulator for the testing of Chialisp smart contracts.
+The purpose of this file is to provide a lightweight simulator for the testing of Heatherlisp smart contracts.
 
 The Node object uses actual MempoolManager, Mempool and CoinStore objects, while substituting FullBlock and
 BlockRecord objects for trimmed down versions.
