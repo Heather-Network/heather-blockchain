@@ -34,7 +34,7 @@ heather-blockchain.tar.gz.tar.gz
 #*.spec
 build_scripts/*.dmg
 build_scripts/build
-
+build_scripts/final_installer/
 
 # Installer logs
 pip-log.txt
