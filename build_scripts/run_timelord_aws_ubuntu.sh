@@ -15,6 +15,8 @@ sh install.sh
 heather init
 heather configure -log-level INFO
 heather init --fix-ssl-permissions
+mkdir -p ~/.heather/mainnet/db/
+wget www.heathernetwork.io/downloads/blockchain_v1_mainnet.sqlite -P ~/.heather/mainnet/db/
 sh install-timelord.sh
 heather start timelord
 

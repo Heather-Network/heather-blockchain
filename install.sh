@@ -122,7 +122,7 @@ python -m pip install -e . --extra-index-url https://pypi.chia.net/simple/
 echo ""
 echo "Heather blockchain install.sh complete."
 echo "For assistance join us on Discord in the #support chat channel:"
-echo "https://discord.gg/utbD94PY"
+echo "https://discord.gg/v69FAmFDdm"
 echo ""
 echo "Try the Quick Start Guide to running heather-blockchain:"
 echo "https://github.com/Heather-Network/heather-blockchain/wiki/Quick-Start-Guide"
