@@ -92,7 +92,7 @@ def configure(
     if testnet is not None:
         if testnet == "true" or testnet == "t":
             print("Setting Testnet")
-            testnet_port = "58008"
+            testnet_port = "8008"
             testnet_introducer = "testnet-introducer.heatherblockchain.io"
             testnet_dns_introducer = "testnet-introducer.heatherblockchain.io"
             testnet = "testnet7"

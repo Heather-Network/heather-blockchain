@@ -77,18 +77,18 @@ network_overrides: &network_overrides
       address_prefix: "heather"
       default_full_node_port: 8008
     testnet0:
-      address_prefix: "theather"
+      address_prefix: "heather"
     testnet1:
-      address_prefix: "theather"
+      address_prefix: "heather"
     testnet2:
-      address_prefix: "theather"
+      address_prefix: "heather"
     testnet3:
-      address_prefix: "theather"
+      address_prefix: "heather"
     testnet4:
-      address_prefix: "theather"
+      address_prefix: "heather"
     testnet7:
-      address_prefix: "theather"
-      default_full_node_port: 58008
+      address_prefix: "heather"
+      default_full_node_port: 8008
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.heatherblockchain.io/notify/mainnet_alert.txt
