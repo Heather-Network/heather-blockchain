@@ -92,7 +92,7 @@ workflow.
 3. Install BlackConnect plugin
 4. Set to run python black on save
 5. Set line length to 120
-6. Install these linters https://github.com/Chia-Network/heather-blockchain/tree/main/.github/linters
+6. Install these linters https://github.com/Heather-Network/heather-blockchain/tree/main/.github/linters
 
 ## Testnets and review environments
 
