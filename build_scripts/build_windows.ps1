@@ -34,15 +34,15 @@ pip install pyinstaller==4.5
 pip install setuptools_scm
 
 Write-Output "   ---"
-Write-Output "Get CHIA_INSTALLER_VERSION"
-# The environment variable CHIA_INSTALLER_VERSION needs to be defined
-$env:CHIA_INSTALLER_VERSION = python .\build_scripts\installer-version.py -win
+Write-Output "Get HEATHER_INSTALLER_VERSION"
+# The environment variable HEATHER_INSTALLER_VERSION needs to be defined
+$env:HEATHER_INSTALLER_VERSION = python .\build_scripts\installer-version.py -win
 
-if (-not (Test-Path env:CHIA_INSTALLER_VERSION)) {
-  $env:CHIA_INSTALLER_VERSION = '0.0.0'
-  Write-Output "WARNING: No environment variable CHIA_INSTALLER_VERSION set. Using 0.0.0"
+if (-not (Test-Path env:HEATHER_INSTALLER_VERSION)) {
+  $env:HEATHER_INSTALLER_VERSION = '0.0.0'
+  Write-Output "WARNING: No environment variable HEATHER_INSTALLER_VERSION set. Using 0.0.0"
   }
-Write-Output "Chia Version is: $env:CHIA_INSTALLER_VERSION"
+Write-Output "Chia Version is: $env:HEATHER_INSTALLER_VERSION"
 Write-Output "   ---"
 
 Write-Output "   ---"
@@ -99,10 +99,10 @@ If ($LastExitCode -gt 0){
 Write-Output "   ---"
 Write-Output "Increase the stack for chia command for (chia plots create) chiapos limitations"
 # editbin.exe needs to be in the path
-editbin.exe /STACK:8000000 daemon\chia.exe
+editbin.exe /STACK:8000000 daemon\heather.exe
 Write-Output "   ---"
 
-$packageVersion = "$env:CHIA_INSTALLER_VERSION"
+$packageVersion = "$env:HEATHER_INSTALLER_VERSION"
 $packageName = "Chia-$packageVersion"
 
 Write-Output "packageName is $packageName"
@@ -111,7 +111,7 @@ Write-Output "   ---"
 Write-Output "fix version in package.json"
 choco install jq
 cp package.json package.json.orig
-jq --arg VER "$env:CHIA_INSTALLER_VERSION" '.version=$VER' package.json > temp.json
+jq --arg VER "$env:HEATHER_INSTALLER_VERSION" '.version=$VER' package.json > temp.json
 rm package.json
 mv temp.json package.json
 Write-Output "   ---"
