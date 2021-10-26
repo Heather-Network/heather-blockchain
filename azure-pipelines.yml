@@ -39,7 +39,7 @@ steps:
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'chia-apple-dev-id-app.p12'
-      certPwd: $(CHIA_APPLE_DEV_ID_APP_PASS)
+      certPwd: $(HEATHER_APPLE_DEV_ID_APP_PASS)
       keychain: temp
       deleteCert: true
 
@@ -83,8 +83,8 @@ steps:
   - bash: |
       ls $(System.DefaultWorkingDirectory)/build_scripts/final_installer/
       cd $(System.DefaultWorkingDirectory)/build_scripts/
-      export CHIA_VERSION="Chia-"$(<version.txt)
-      shasum -a 256 $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg > $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg.sha256
+      export HEATHER_VERSION="Heather-"$(<version.txt)
+      shasum -a 256 $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg > $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg.sha256
       ls $(System.DefaultWorkingDirectory)/build_scripts/final_installer/
     displayName: "Create Checksums"
 
@@ -97,10 +97,10 @@ steps:
 
   - bash: |
       cd $(System.DefaultWorkingDirectory)/build_scripts/
-      export CHIA_VERSION="Chia-"$(<version.txt)
+      export HEATHER_VERSION="Heather-"$(<version.txt)
 
       pip3 install py3createtorrent
-      py3createtorrent -f -t udp://tracker.opentrackr.org:1337/announce $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg -o $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg.torrent --webseed https://download-chia-net.s3.us-west-2.amazonaws.com/install/$CHIA_VERSION.dmg
+      py3createtorrent -f -t udp://tracker.opentrackr.org:1337/announce $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg -o $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg.torrent --webseed https://download-chia-net.s3.us-west-2.amazonaws.com/install/$HEATHER_VERSION.dmg
       ls
     displayName: "Create torrent file"
     condition: and(succeeded(), contains(variables['build.sourceBranch'], 'refs/tags/'))
@@ -110,9 +110,9 @@ steps:
       export AWS_SECRET_ACCESS_KEY=$(SecretKey)
       export AWS_DEFAULT_REGION=us-west-2
       cd $(System.DefaultWorkingDirectory)/build_scripts/
-      export CHIA_VERSION="Chia-"$(<version.txt)
-      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg s3://download-chia-net/beta/Chia-intel_latest_beta.dmg
-      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg.sha256 s3://download-chia-net/beta/Chia-intel_latest_beta.dmg.sha256
+      export HEATHER_VERSION="Heather-"$(<version.txt)
+      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg s3://download-chia-net/beta/Heather-intel_latest_beta.dmg
+      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg.sha256 s3://download-chia-net/beta/Heather-intel_latest_beta.dmg.sha256
     displayName: "Upload Beta Files"
     condition: and(succeeded(), contains(variables['build.sourceBranch'], 'refs/heads/main'))
 
@@ -121,17 +121,17 @@ steps:
       export AWS_SECRET_ACCESS_KEY=$(SecretKey)
       export AWS_DEFAULT_REGION=us-west-2
       cd $(System.DefaultWorkingDirectory)/build_scripts/
-      export CHIA_VERSION="Chia-"$(<version.txt)
-      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg s3://download-chia-net/install/
-      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg.sha256 s3://download-chia-net/install/
-      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$CHIA_VERSION.dmg.torrent s3://download-chia-net/torrents/
+      export HEATHER_VERSION="Heather-"$(<version.txt)
+      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg s3://download-chia-net/install/
+      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg.sha256 s3://download-chia-net/install/
+      aws s3 cp $(System.DefaultWorkingDirectory)/build_scripts/final_installer/$HEATHER_VERSION.dmg.torrent s3://download-chia-net/torrents/
     displayName: "Upload Release Files"
     condition: and(succeeded(), contains(variables['build.sourceBranch'], 'refs/tags/'))
 
   - bash: |
       cd $(System.DefaultWorkingDirectory)/build_scripts/
-      export CHIA_TAG=$(<version.txt)
+      export HEATHER_TAG=$(<version.txt)
       export REPO_NAME=$(echo $(Build.Repository.Name) | cut -d'/' -f 2)
-      curl -s -XPOST -H "Authorization: Bearer $(GLUE_ACCESS_TOKEN)" --data "{\"chia_ref\": \"$CHIA_TAG\"}" $(GLUE_API_URL)/api/v1/${REPO_NAME}/${CHIA_TAG}/success/build-macos
+      curl -s -XPOST -H "Authorization: Bearer $(GLUE_ACCESS_TOKEN)" --data "{\"chia_ref\": \"$HEATHER_TAG\"}" $(GLUE_API_URL)/api/v1/${REPO_NAME}/${HEATHER_TAG}/success/build-macos
     displayName: "Mark installer complete"
     condition: and(succeeded(), contains(variables['build.sourceBranch'], 'refs/tags/'))
