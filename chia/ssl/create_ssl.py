@@ -100,7 +100,7 @@ def make_ca_cert(cert_path: Path, key_path: Path):
         .public_key(root_key.public_key())
         .serial_number(x509.random_serial_number())
         .not_valid_before(datetime.datetime.utcnow())
-        .not_valid_after(datetime.datetime.utcnow() + datetime.timedelta(days=3650))
+        .not_valid_after(datetime.datetime.utcnow() + datetime.timedelta(days=7300))
         .add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
         .sign(root_key, hashes.SHA256(), default_backend())
     )
