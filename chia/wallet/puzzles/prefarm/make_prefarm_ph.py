@@ -8,8 +8,8 @@ from chia.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
 from chia.util.condition_tools import parse_sexp_to_conditions
 from chia.util.ints import uint32
 
-address1 = "heather15gx26ndmacfaqlq8m0yajeggzceu7cvmaz4df0hahkukes695rss6lej7h"  # devA wallet (m/12381/8444/2/42):
-address2 = "heather1c2cguswhvmdyz9hr3q6hak2h6p9dw4rz82g4707k2xy2sarv705qcce4pn"  # devB wallet (m/12381/8444/2/0)
+address1 = "heather1wa7nzx8cfmmc0d299km7ee0ezx8fk6agt57wzl6nvws5lm4pg3kqtune97"  # devA wallet (m/12381/8444/2/42):
+address2 = "heather1uu4y465sv34t5evc6wr0fn4xnfz3rkf9t0va2la5drt3pt4uc7ts3ej7nu"  # devB wallet (m/12381/8444/2/0)
 
 ph1 = decode_puzzle_hash(address1)
 ph2 = decode_puzzle_hash(address2)
