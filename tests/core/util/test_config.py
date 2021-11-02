@@ -13,12 +13,12 @@ from time import sleep
 from typing import Dict
 
 # Commented-out lines are preserved to aide in debugging the multiprocessing tests
-# import logging
-# import os
-# import threading
+import logging
+import os
+import threading
 
 # log = logging.getLogger(_ _name__)
-log = logging.getLogger("heather.tests.core.util.test_config")
+log = logging.getLogger("chia.tests.core.util.test_config")
 
 def write_config(root_path: Path, config: Dict):
     """

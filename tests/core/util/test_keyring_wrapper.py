@@ -7,7 +7,7 @@ from sys import platform
 from tests.util.keyring import using_temp_file_keyring, using_temp_file_keyring_and_cryptfilekeyring
 
 #log = logging.getLogger(_ _name__)
-log = logging.getLogger("heather.tests.core.util.test_keyring_wrapper")
+log = logging.getLogger("chia.tests.core.util.test_keyring_wrapper")
 
 class TestKeyringWrapper:
     @pytest.fixture(autouse=True, scope="function")

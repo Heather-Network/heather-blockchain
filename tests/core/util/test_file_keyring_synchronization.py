@@ -15,7 +15,7 @@ from typing import List
 
 
 #log = logging.getLogger(_ _name__)
-log = logging.getLogger("heather.tests.core.util.test_file_keyring_synchronization")
+log = logging.getLogger("chia.tests.core.util.test_file_keyring_synchronization")
 
 DUMMY_SLEEP_VALUE = 2
 

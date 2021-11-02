@@ -21,7 +21,7 @@ if [ ! "$HEATHER_INSTALLER_VERSION" ]; then
 	echo "WARNING: No environment variable HEATHER_INSTALLER_VERSION set. Using 0.0.0."
 	HEATHER_INSTALLER_VERSION="0.0.0"
 fi
-echo "Chia Installer Version is: $HEATHER_INSTALLER_VERSION"
+echo "Heather Installer Version is: $HEATHER_INSTALLER_VERSION"
 
 echo "Installing npm and electron packagers"
 npm install electron-packager -g
@@ -75,7 +75,7 @@ fi
 mv $DIR_NAME ../build_scripts/dist/
 cd ../build_scripts || exit
 
-echo "Create chia-$HEATHER_INSTALLER_VERSION.deb"
+echo "Create heather-$HEATHER_INSTALLER_VERSION.deb"
 rm -rf final_installer
 mkdir final_installer
 electron-installer-debian --src dist/$DIR_NAME/ --dest final_installer/ \
